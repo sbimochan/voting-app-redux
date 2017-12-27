@@ -1,12 +1,12 @@
 import React from 'react';
-import ReactDOM, { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 // import registerServiceWorker from './registerServiceWorker';
 import {createStore} from 'redux';
 import myApp from './reducers';
 
-let store = createStore(myApp);
+let store = createStore(myApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 function newRender(){
   ReactDOM.render(<App store ={store}/>, document.getElementById('root'));
 
